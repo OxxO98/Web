@@ -1,0 +1,37 @@
+div{
+  //border: 2px solid black;
+  box-sizing: border-box;
+}
+#header{
+  position:static;
+  margin-left: 140px;
+  padding-left: 276px;
+  padding-right: 276px;
+  width: 1640px;
+  height: 105px;
+}
+.header_img{
+  position: relative;
+  background-color: #343434;
+  width: 1088px;
+  height: 105px;
+}
+#main{
+  position: static;
+  margin-left: 140px;
+  margin-right: 140px;
+  width: 1640px;
+  height: 650px;
+}
+.main_text{
+  position: relative;
+  left: 276px;
+  font: 10rem ScriptMT;
+}
+#footer{
+  position: static;
+  margin-left: 140px;
+  margin-right: 140px;
+  width: 1640px;
+  height: 210px;
+}
