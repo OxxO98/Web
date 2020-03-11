@@ -6,11 +6,11 @@ window.addEventListener('resize', function() {
 });
 function resizeDone(){
   if(1640 <= window.innerWidth){
-    document.getElementById('wrap').style.marginLeft=(window.innerWidth-1640)/2+'px';
+    $("#wrap").css("marginLeft", (window.innerWidth-1640)/2 + "px");
     console.log(window.innerWidth);
   }
   else{
-    document.getElementById('wrap').style.marginLeft=0 +'px';
+    $("#wrap").css("marginLeft", "0px");
   }
 }
 //중앙 정렬 함수
