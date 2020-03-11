@@ -1,7 +1,16 @@
+//윈도우 객체 탐색
+var timer = null;
 window.addEventListener('resize', function() {
-  if(1640 < window.innerWidth){
+  clearTimeout( timer );
+  timer = setTimeout( resizeDone, 150 );
+});
+function resizeDone(){
+  if(1640 <= window.innerWidth){
     document.getElementById('wrap').style.marginLeft=(window.innerWidth-1640)/2+'px';
-    console.log(document.getElementById('wrap').style.marginLeft);
+    console.log(window.innerWidth);
   }
-}, true);
-// 일단 중앙정렬
+  else{
+    document.getElementById('wrap').style.marginLeft=0 +'px';
+  }
+}
+//중앙 정렬 함수
