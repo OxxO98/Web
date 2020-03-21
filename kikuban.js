@@ -8,22 +8,34 @@ var webSixColumn = (columnWidth+"px ").repeat(6);
 var webFourColumn = "375px 375px 375px 375px";
 var webThreeColumn = (columnWidth*2+columnGap+"px ").repeat(3);
 var webTwoColumn = (columnWidth*3+columnGap*2+"px ").repeat(2);
-var iPhoneThreeColumn = "242px 242px 242px";
-var iPhoneTwoColumn = "375px 375px";
-var iPhoneOneColumn = "762px";
+var iPhoneThreeColumn = "1fr 1fr 1fr";
+var iPhoneTwoColumn = "1fr 1fr";
+var iPhoneOneColumn = "1fr";
+
 
 webSixColumn = webSixColumn.substring(0, webSixColumn.length-1);
 webThreeColumn = webThreeColumn.substring(0, webThreeColumn.length-1);
 webTwoColumn = webTwoColumn.substring(0, webTwoColumn.length-1);
 
-// 이미지 수정
-function imageEdit(target, ratio){
+//이미지 수정
+function imagerRatioEdit(target, ratio){
   console.log(target.find("img"));
 
   var imgArr = target.find("img");
   imgArr.each(function(){
     var origin = $(this).width();
     $(this).css("width", origin/ratio+"px");
+  });
+
+}
+//이미지 넓이기준 수정
+function imagerWidthEdit(target, width){
+  console.log(target.find("img"));
+
+  var imgArr = target.find("img");
+  imgArr.each(function(){
+    var origin = $(this).width();
+    $(this).css("width", width+"px");
   });
 
 }
@@ -99,7 +111,8 @@ function appendKikuban(target, column, device){
       target.css("grid-template-columns", iPhoneTwoColumn);
     } else {
       target.css("grid-template-columns", iPhoneOneColumn);
-      imageEdit(target, 2);
+      target.css("height", "1134px");
+      imagerRatioEdit(target, 2);
     }
   }
 }
@@ -114,10 +127,10 @@ function matchKikubanColumns (target){
   var col = target.css("--col");
   console.log(target.css("--col"));
 
-  if (window.matchMedia("(max-device-width: 1536px)").matches && window.matchMedia("(max-device-width: 768px)").matches == false){
+  if (window.matchMedia("(max-width: 1536px)").matches && window.matchMedia("(max-width: 768px)").matches == false){
     //iPad
     appendKikuban(target, col, "iPad");
-  } else if(window.matchMedia("(max-device-width: 768px)").matches){
+  } else if(window.matchMedia("(max-width: 768px)").matches){
     //iPhone
     appendKikuban(target, col, "iPhone");
   } else {
@@ -129,12 +142,12 @@ function matchHeader(target){
   //header는 col3 지정
   target = target.children(".col3");
 
-  if (window.matchMedia("(max-device-width: 1536px)").matches && window.matchMedia("(max-device-width: 768px)").matches == false){
+  if (window.matchMedia("(max-width: 1536px)").matches && window.matchMedia("(max-width: 768px)").matches == false){
     //iPad
   } else if(window.matchMedia("(max-device-width: 768px)").matches){
     //iPhone
     target.css("grid-template-columns", iPhoneThreeColumn);
-    imageEdit(target, 2);
+    imagerRatioEdit(target, 2);
   } else {
     //web
   }
