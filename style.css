@@ -88,32 +88,13 @@ body{
   height: 147px;
 }
 /* 미디어 쿼리 부분 */
-@media (min-device-width: 1537px){
+@media screen and (min-width: 1537px){
   /* computer */
-  #wrap{
-    width: 1536px;
-    margin-left: 192px;
-  }
-  #header{
-    width: 1536px;
-  }
 }
-@media (max-device-width: 1536px){
+@media screen and (max-width: 1536px){
   /* iPad */
-  #wrap{
-    width: 1536px;
-  }
-  #header{
-    width: 1536px;
-  }
 }
-@media (max-device-width: 768px){
+@media screen and (max-width: 768px){
   /* iPhone */
   /* js전처리 임을 기억 */
-  #wrap{
-    width: 1536px;
-  }
-  #header{
-    width: 1536px;
-  }
 }
