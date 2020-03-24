@@ -1,79 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean');
+html{
+  font-size: 12px;
+}
 div{
   /*border: 2px solid black;*/
   box-sizing: border-box;
   font-family: "Nanum Gothic", sans-serif;
   overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size : 1rem;
 }
 body{
   margin: 0;
-  padding: 0;
-}
-
-.col6{
-  --col : 6;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 12px;
-}
-.col3{
-  --col : 3;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 12px;
-}
-.col1{
-  --col : 1;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 12px;
-}
-
-.kikuban1{
-  height: 2268px;
-}
-.kikuban2{
-  height: 1134px;
-}
-.kikubanAppend{
-  height: 1134px;
 }
 
 #wrap{
   overflow: hidden;
 }
 #header{
+  /* display: none; */
+  overflow: hidden;
+  position: static;
+
+  border-bottom: 1px solid black;
+}
+#header.scroll{
   overflow: hidden;
   z-index: 1;
   position: fixed;
 
-  height: 74px;
+  top : 0px;
+  left : 0px;
+  width : 100%;
 
+  background-color: #ffffff;
   border-bottom: 1px solid black;
-  background-color: #343434;
-}
-.header_breadcrumb{
-  padding-top: 49px;
-}
-.header_breadcrumbBar{
-}
-.header_logo{
-  background-color: #aeaeae;
-  text-align: center;
-}
-.header_search{
-  padding-top: 49px;
-}
-.header_searchBar{
 }
 #container{
   overflow: hidden;
   z-index: 0;
   position: static;
-  padding-top: 74px;
-}
-.container_cover{
-  position: relative;
 }
 #index{
   overflow: hidden;
@@ -86,15 +53,4 @@ body{
   position: static;
 
   height: 147px;
-}
-/* 미디어 쿼리 부분 */
-@media screen and (min-width: 1537px){
-  /* computer */
-}
-@media screen and (max-width: 1536px){
-  /* iPad */
-}
-@media screen and (max-width: 768px){
-  /* iPhone */
-  /* js전처리 임을 기억 */
 }
