@@ -1,21 +1,9 @@
 //kikuban
 
 //변수 선언
-var columnWidth = 246;
-var columnGap = 12;
-
-var webSixColumn = (columnWidth+"px ").repeat(6);
-var webFourColumn = "375px 375px 375px 375px";
-var webThreeColumn = (columnWidth*2+columnGap+"px ").repeat(3);
-var webTwoColumn = (columnWidth*3+columnGap*2+"px ").repeat(2);
-var iPhoneThreeColumn = "1fr 1fr 1fr";
-var iPhoneTwoColumn = "1fr 1fr";
-var iPhoneOneColumn = "1fr";
-
-
-webSixColumn = webSixColumn.substring(0, webSixColumn.length-1);
-webThreeColumn = webThreeColumn.substring(0, webThreeColumn.length-1);
-webTwoColumn = webTwoColumn.substring(0, webTwoColumn.length-1);
+var smallThreeColumn = "1fr 1fr 1fr";
+var smallTwoColumn = "1fr 1fr";
+var smallOneColumn = "1fr";
 
 //이미지 수정
 function imagerRatioEdit(target, ratio){
@@ -44,7 +32,7 @@ function col2xEdit(target, column){
   target.after("<div class=\"kikubanAppend\"></div>");
 
   target.siblings(".kikubanAppend").css("display", "grid");
-  target.siblings(".kikubanAppend").css("grid-template-columns", iPhoneTwoColumn);
+  target.siblings(".kikubanAppend").css("grid-template-columns", smallTwoColumn);
 
   var tmp1 ="", tmp2="";
 
@@ -71,7 +59,7 @@ function col3xEdit(target, column){
   target.after("<div class=\"kikubanAppend\"></div>");
 
   target.siblings(".kikubanAppend").css("display", "grid");
-  target.siblings(".kikubanAppend").css("grid-template-columns", iPhoneTwoColumn);
+  target.siblings(".kikubanAppend").css("grid-template-columns", smallTwoColumn);
 
   var tmp1 ="", tmp2="";
 
@@ -95,22 +83,22 @@ function col3xEdit(target, column){
 }
 //국배판 추가
 function appendKikuban(target, column, device){
-  if(device == "iPad"){
+  if(device == "Medium"){
 
-  } else if(device == "iPhone"){
+  } else if(device == "small"){
     if(column == 6){
-      target.css("grid-template-columns", iPhoneTwoColumn);
+      target.css("grid-template-columns", smallTwoColumn);
       col3xEdit(target, 6);
     } else if(column == 4){
-      target.css("grid-template-columns", iPhoneTwoColumn);
+      target.css("grid-template-columns", smallTwoColumn);
       col2xEdit(target, 4);
     } else if(column == 3){
-      target.css("grid-template-columns", iPhoneOneColumn);
+      target.css("grid-template-columns", smallOneColumn);
       col3xEdit(target, 3);
     } else if(column == 2){
-      target.css("grid-template-columns", iPhoneTwoColumn);
+      target.css("grid-template-columns", smallTwoColumn);
     } else {
-      target.css("grid-template-columns", iPhoneOneColumn);
+      target.css("grid-template-columns", smallOneColumn);
       target.css("height", "1134px");
       imagerRatioEdit(target, 2);
     }
@@ -127,28 +115,13 @@ function matchKikubanColumns (target){
   var col = target.css("--col");
   console.log(target.css("--col"));
 
-  if (window.matchMedia("(max-width: 1536px)").matches && window.matchMedia("(max-width: 768px)").matches == false){
-    //iPad
-    appendKikuban(target, col, "iPad");
-  } else if(window.matchMedia("(max-width: 768px)").matches){
-    //iPhone
-    appendKikuban(target, col, "iPhone");
+  if (window.matchMedia("(max-width: 1620px) and (min-width: 811px)").matches){
+    //styleMedium
+    appendKikuban(target, col, "Medium");
+  } else if(window.matchMedia("(max-width: 810px)").matches){
+    //styleSmall
+    appendKikuban(target, col, "small");
   } else {
-    //web
-  }
-}
-
-function matchHeader(target){
-  //header는 col3 지정
-  target = target.children(".col3");
-
-  if (window.matchMedia("(max-width: 1536px)").matches && window.matchMedia("(max-width: 768px)").matches == false){
-    //iPad
-  } else if(window.matchMedia("(max-device-width: 768px)").matches){
-    //iPhone
-    target.css("grid-template-columns", iPhoneThreeColumn);
-    imagerRatioEdit(target, 2);
-  } else {
-    //web
+    //styleBig
   }
 }

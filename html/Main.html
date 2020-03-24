@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link rel="stylesheet" type= "text/css" href="../style.css">
+  <link rel="stylesheet" media="(max-width : 810px)" href="../styleSmall.css" />
+  <link rel="stylesheet" media="(max-width : 1620px) and (min-width : 811px)" href="../styleMedium.css" />
+  <link rel="stylesheet" media="(min-width : 1621px)" href="../styleBig.css" />
   <script src="../jquery-3.4.1.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name = "viewport" content="width = device-width, initial-scale = 1.0"/>
@@ -10,25 +13,23 @@
 <body>
   <div id = wrap>
     <div id="header">
-      <div class="col3">
+      <div class="col3" style="height: 60px">
         <div class="header_breadcrumb">
           header_breadcrumb
         </div>
-        <div class="header_logo">
-          <img src="../img/header_logo.png">
+        <div class="header_logo" style="background-image : url('../img/header_logo.png')">
         </div>
         <div class="header_search">
-        <div class="header_searchBar">
+          <div class="header_searchBar">
           <input type="text">
           <input type="button" value="Search">
         </div>
-      </div>
+        </div>
       </div>
     </div>
     <div id="container">
       <div class="col1 kikuban1">
-        <div class="container_cover">
-          <img src="../img/cover.png">
+        <div class="container_cover" style="background-image : url('../img/cover.png')">
         </div>
       </div>
     </div>

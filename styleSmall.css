@@ -1,0 +1,42 @@
+#wrap{
+  width : 768px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
+  padding-bottom: 86px;
+}
+
+.kikuban1{
+  height: 1080px;
+}
+.kikuban2{
+  height: 1080px;
+}
+.kikubanAppend{
+  height: 1080px;
+}
+
+.col12{
+  --col : 12;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 12px;
+}
+.col6{
+  --col : 6;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 12px;
+}
+.col3{
+  --col : 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+.col1{
+  --col : 1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 12px;
+}
