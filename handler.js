@@ -62,3 +62,9 @@ function scrollHeader( animate ){
 // matchHeader($("#header"));
 matchKikubanColumns($("#index"));
 // matchKikubanColumns($("#container"));
+setImg({
+  target : $("#header .header_searchButton"),
+  sizeSmall : "30 30",
+  sizeBig : "60 60",
+  imgSprite : "../img/header_search.png"
+});

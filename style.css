@@ -14,6 +14,12 @@ div{
 body{
   margin: 0;
 }
+input{
+  border : none;
+  overflow: hidden;
+  padding: 0;
+  float: left;
+}
 
 #wrap{
   overflow: hidden;
@@ -23,6 +29,7 @@ body{
   overflow: hidden;
   position: static;
 
+  background-image : url('./img/header.png');
   border-bottom: 1px solid black;
 }
 #header.scroll{
@@ -34,8 +41,13 @@ body{
   left : 0px;
   width : 100%;
 
-  background-color: #ffffff;
+  background-image : url('./img/header.png');
   border-bottom: 1px solid black;
+}
+.header_logo{
+  background-image : url('./img/header_logo.png');
+
+  height: 60px;
 }
 #container{
   overflow: hidden;
